@@ -58,41 +58,8 @@ a:hover {
 
 .hdr-top {
 	color: #EFC865;
-	margin-bottom: 15px;
-}
-
-.hdr-nav ul {
-	margin: 0;
-	padding: 0;
-}
-.hdr-nav ul li {
-	display: inline-block;
-	list-style-type: none;
-	margin-left: 30px;
-}
-.hdr-nav ul li a {
-	color: #fff;
 	font-size: 16px;
 	text-transform: uppercase;
-	font-weight: 700;
-	position: relative;
-	padding-bottom: 15px;
-}
-.hdr-nav ul li a:after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 0;
-	height: 3px;
-	background-color: #EFC865;
-	transform: translateX(-50%);
-}
-.hdr-nav ul li a:hover {
-	color: #EFC865;
-}
-.hdr-nav ul li a:hover:after {
-	width: 50%;
 }
 
 /* Product Info */
@@ -165,17 +132,38 @@ a:hover {
 }
 
 /* Promo */
-
+.promo-area {
+	background-color: #EFC865;
+}
 .single-promo {
 	background-color: #EFC865;
 	padding: 15px 10px;
-	margin-top: 35px;
-	border-radius: 5px;
+	position: relative;
+	min-height: 101px;
 }
-.single-promo i {
-	margin-right: 15px;
-	font-size: 30px;
-	color: #1a1a1a;
+.single-promo.one {
+	border-left: 1px dashed #1a1a1a;
+	padding-left: 25px;
+}
+.single-promo.four {
+	border-right: 1px dashed #1a1a1a;
+	padding-right: 25px;
+}
+.single-promo:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -14px;
+	height: 100%;
+	width: 1px;
+	border-right: 1px dashed #1a1a1a;
+}
+.single-promo.four:after {
+	display: none;
+}
+.single-promo img {
+	width: 50px;
+	margin-right: 10px;
 }
 .single-promo h5 {
 	margin-bottom: 5px;
@@ -262,32 +250,25 @@ h3.about-heading {
 	display: inline-block;
 }
 
-.ftr-nav ul {
-	margin: 0;
-	padding: 0;
-}
-.ftr-nav ul li {
-	display: inline-block;
-	list-style-type: none;
-	margin-left: 30px;
-}
-.ftr-nav ul li a {
+.copyright-txt {
 	color: #fff;
 	font-size: 16px;
-	text-transform: uppercase;
-	font-weight: 700;
 }
-.ftr-nav ul li a:hover {
-	color: #EFC865;
-}
+
 
 
 
 /* LG Device :992px. */
 @media (min-width: 992px) and (max-width: 1199px) {
 
+	.single-promo {
+		min-height: inherit;
+	}
 	.single-promo h5 {
-		font-size: 14px
+		font-size: 13px
+	}
+	.single-promo p {
+		font-size: 11px
 	}
 
 }
@@ -295,14 +276,20 @@ h3.about-heading {
 /* MD Device :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
 
-	.hdr-nav ul li,
-	.ftr-nav ul li {
-		margin-left: 20px
+	.single-promo {
+		border: 1px dashed #1a1a1a;
+		border-top: 0
 	}
-	.hdr-nav ul li a,
-	.ftr-nav ul li a {
-		font-size: 14px
+	.single-promo:after {
+		display: none
 	}
+	.single-promo.one {
+		padding-left: 10px
+	}
+	.single-promo.four {
+		padding-right: 10px
+	}
+	
 
 }
 
@@ -310,10 +297,10 @@ h3.about-heading {
 @media (max-width: 767px) {
 
 	.slider {
-		padding-top: 310px
+		padding-top: 220px
 	}
  	.slider .large img {
- 		height: 290px
+ 		height: 200px
  	}
  	.slider label img {
  		height: 49px
@@ -331,24 +318,33 @@ h3.about-heading {
  	h3.pro-desc-heading {
  		font-size: 18px
  	}
- 	.hdr-nav.text-right,
- 	.ftr-nav.text-right {
- 		text-align: center!important;
- 		margin-top: 15px
- 	}
+ 	
  	.hdr-logo,
  	.ftr-logo {
  		text-align: center
  	}
- 	.hdr-nav ul li,
- 	.ftr-nav ul li {
- 		margin-left: 15px
- 	}
- 	.hdr-nav ul li a,
- 	.ftr-nav ul li a {
- 		font-size: 14px
- 	}
+ 	
  	.hdr-top {
  		display: none
  	}
+
+ 	.single-promo {
+		border: 1px dashed #1a1a1a;
+		border-top: 0
+	}
+	.single-promo:after {
+		display: none
+	}
+	.single-promo.one {
+		padding-left: 10px
+	}
+	.single-promo.four {
+		padding-right: 10px
+	}
+
+	.copyright-txt {
+		text-align: center !important;
+		margin-top: 10px;
+		font-size: 14px;
+	}
 }
